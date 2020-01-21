@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eaitest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript">
+      var tweets_api_url = "<%= api_v1_tweets_path %>";
+      var tweeters_api_url = "<%= api_v1_tweeters_path %>";
+      var followers_api_url = "<%= followers_api_v1_tweeters_path %>";
+      var followings_api_url = "<%= followings_api_v1_tweeters_path %>";
+      var profile_api_url = "<%= profile_api_v1_tweeters_path(user_id: '__user_id__') %>"
+      var follow_api_url = "<%= follow_api_v1_tweeter_path(id: '__user_id__') %>"
+      var unfollow_api_url = "<%= unfollow_api_v1_tweeter_path(id: '__user_id__') %>"
+    </script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render partial: 'shared/navbar' %>
+    <%= yield %>
+  </body>
+</html>
